@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +24,15 @@ public class UserController {
         return service.save(user);
     }
 
-    @GetMapping("/things/{id}")
+    @GetMapping("/users/{id}")
     public User getUser(@PathVariable String id) {
         logger.info("GET request on route User with {}", id);
         Long UserId = Long.parseLong(id);
         return service.get(UserId);
+    }
+
+    @GetMapping("/users")
+    public List<User> getAllUsers() {
+        return service.getAll();
     }
 }
