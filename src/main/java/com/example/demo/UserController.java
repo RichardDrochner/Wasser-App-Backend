@@ -20,19 +20,19 @@ public class UserController {
     Logger logger = LoggerFactory.getLogger(UserController.class);
 
     @PostMapping("/User")
-    public User createUser(@RequestBody User user) {
-        return service.save(user);
+    public Wasser createUser(@RequestBody Wasser wasser) {
+        return service.save(wasser);
     }
 
     @GetMapping("/users/{id}")
-    public User getUser(@PathVariable String id) {
-        logger.info("GET request on route User with {}", id);
+    public Wasser getUser(@PathVariable String id) {
+        logger.info("GET request on route Wasser with {}", id);
         Long UserId = Long.parseLong(id);
         return service.get(UserId);
     }
 
     @GetMapping("/users")
-    public List<User> getAllUsers() {
+    public List<Wasser> getAllUsers() {
         return service.getAll();
     }
 }

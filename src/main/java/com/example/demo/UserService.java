@@ -10,20 +10,20 @@ public class UserService {
     @Autowired
     UserRepository repo;
 
-    public User save(User user) {
-        return repo.save(user);
+    public Wasser save(Wasser wasser) {
+        return repo.save(wasser);
     }
 
-    public User get(Long id) {
+    public Wasser get(Long id) {
         return repo.findById(id).orElseThrow(() -> new RuntimeException());
     }
 
-    public List<User> getAll() {
-        Iterable<User> iterator = repo.findAll();
-        List<User> users = new ArrayList<User>();
-        for (User user : iterator)
-            users.add(user);
-        return users;
+    public List<Wasser> getAll() {
+        Iterable<Wasser> iterator = repo.findAll();
+        List<Wasser> wassers = new ArrayList<Wasser>();
+        for (Wasser wasser : iterator)
+            wassers.add(wasser);
+        return wassers;
     }
 
 }
