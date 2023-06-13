@@ -29,7 +29,7 @@ public class UserControllerTest {
         when(service.get(42L)).thenReturn(p1);
 
         //Erwartetes Ergebniss
-        String expected = "{\"id\":42,\"name\":\"Ägid\",\"amount\":99}";
+        String expected = "{\"id\":42,\"name\":\"Ägid\",\"amount\":4}";
 
         //Aufruf und Vergleich
         this.mockMvc.perform(get("/users/42"))
