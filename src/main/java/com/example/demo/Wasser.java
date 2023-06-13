@@ -17,6 +17,11 @@ import jakarta.persistence.Id;
     public Wasser() {
     }
 
+    public Wasser(String name, int amount) {
+        this.name = name;
+        this.amount = amount;
+    }
+
     public Long getId() {
         return id;
     }
