@@ -11,14 +11,13 @@ import jakarta.persistence.Id;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
     private int amount;
+    private int getrunken = 0;
 
     public Wasser() {
     }
 
-    public Wasser(String name, int amount) {
-        this.name = name;
+    public Wasser(int amount) {
         this.amount = amount;
     }
 
@@ -30,14 +29,6 @@ import jakarta.persistence.Id;
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public int getAmount() {
         return amount;
     }
@@ -46,7 +37,17 @@ import jakarta.persistence.Id;
         this.amount = amount;
     }
 
+    public int getGetrunken() {
+        return getrunken;
+    }
 
+    public void setGetrunken(int getrunken) {
+        this.getrunken += getrunken;
+    }
+
+    public String toString(){
+        return "Wasser{id=" + id + ", amount=" + amount + ", getrunken=" + getrunken + "}";
+    }
 }
 
 

@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -24,12 +25,12 @@ public class UserControllerTest {
     @Test
     public void getRoute() throws Exception{
         //Test Daten und Service Mock
-        var p1 = new Wasser("Ägid", 4);
+        var p1 = new Wasser( 4);
         p1.setId(42L);
         when(service.get(42L)).thenReturn(p1);
 
         //Erwartetes Ergebniss
-        String expected = "{\"id\":42,\"name\":\"Ägid\",\"amount\":4}";
+        String expected = "{\"id\":42,\"amount\":4}";
 
         //Aufruf und Vergleich
         this.mockMvc.perform(get("/users/42"))
