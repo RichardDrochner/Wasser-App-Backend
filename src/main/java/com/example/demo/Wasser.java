@@ -12,7 +12,7 @@ import jakarta.persistence.Id;
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int amount;
-    private int getrunken = 0;
+    private int getrunken;
 
     public Wasser() {
     }
