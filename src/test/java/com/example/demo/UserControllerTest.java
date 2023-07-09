@@ -29,7 +29,7 @@ public class UserControllerTest {
         p1.setId(42L);
         when(service.get(42L)).thenReturn(p1);
 
-        //Erwartetes Ergebniss
+        //Erwartetes Ergebnis
         String expected = "{\"id\":42,\"amount\":4}";
 
         //Aufruf und Vergleich

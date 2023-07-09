@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 
 
 @Entity
-    public class Wasser {
+public class Wasser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
