@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -14,18 +13,18 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest(UserController.class)
-public class UserControllerTest {
+@WebMvcTest(NutzerController.class)
+public class NutzerControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
     @MockBean
-    private UserService service;
+    private NutzerService service;
 
     @Test
     public void getRoute() throws Exception{
         //Test Daten und Service Mock
-        var p1 = new Wasser( 4);
+        var p1 = new Benutzer( 4);
         p1.setId(42L);
         when(service.get(42L)).thenReturn(p1);
 

@@ -1,17 +1,16 @@
 package com.example.demo;
 
-import com.example.demo.Wasser;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class WasserTest {
+class NutzerTest {
 
     @Test
     void testToString() {
         int amount = 99;
 
-        Wasser wasser = new Wasser(amount);
+        Benutzer wasser = new Benutzer(amount);
         wasser.setId(42L);
 
         String expected = "Wasser{id=42, amount=99, getrunken=0}";
