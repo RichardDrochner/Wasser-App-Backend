@@ -45,7 +45,11 @@ public class Benutzer {
     }
 
     public String toString(){
-        return "Benutzer{id=" + id + ", name=" + name + ", email:" + email + "}";
+        return "Benutzer{" +
+                "id=" + id +
+                ", name=" + name +
+                ", email=" + email +
+                "}";
     }
 
 }

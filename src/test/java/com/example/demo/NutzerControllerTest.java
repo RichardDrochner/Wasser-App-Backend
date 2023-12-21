@@ -24,12 +24,12 @@ public class NutzerControllerTest {
     @Test
     public void getRoute() throws Exception{
         //Test Daten und Service Mock
-        var p1 = new Benutzer( 4);
+        var p1 = new Benutzer("Richard", "richard@mail.com");
         p1.setId(42L);
         when(service.get(42L)).thenReturn(p1);
 
         //Erwartetes Ergebnis
-        String expected = "{\"id\":42,\"amount\":4}";
+        String expected = "{\"id\":42,\"name\":Richard,\"email\"richard@mail.com\"}";
 
         //Aufruf und Vergleich
         this.mockMvc.perform(get("/users/42"))
