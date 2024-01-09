@@ -37,6 +37,12 @@ public class NutzerController {
         return service.saveWasser(wasser);
     }
 
+    @PostMapping("/update")
+    @CrossOrigin
+    public void updateWasser(@RequestParam("owner") String owner, @RequestParam("tagesziel") double tagesziel,@RequestParam("getrunken") double getrunken){
+        service.updateWasser(owner, tagesziel, getrunken);
+    }
+
     @GetMapping("/users")
     @CrossOrigin
     public List<Wasser> getAllForUser(@RequestParam("mail") String email) {

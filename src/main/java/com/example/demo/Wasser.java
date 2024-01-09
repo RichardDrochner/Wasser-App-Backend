@@ -1,8 +1,6 @@
 package com.example.demo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.time.LocalDate;
 
@@ -14,6 +12,7 @@ public class Wasser extends Benutzer {
     private double tagesziel;
     private double getrunken;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     public Wasser(String owner, LocalDate date, double tagesziel, double getrunken) {

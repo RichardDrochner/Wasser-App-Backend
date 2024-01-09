@@ -24,8 +24,8 @@ public class NutzerServiceTest {
     @Disabled
     @DisplayName("should find User by Id")
     void TestFindById(){
-        var p1 = new Benutzer("Richard", "richard@mail.com");
-        var p2 = new Benutzer("Alim", "Alim@mail.com");
+        var p1 = new Benutzer("Richard", "Drochner", "richard@mail.com");
+        var p2 = new Benutzer("Alim", "Kamara", "Alim@mail.com");
         p1.setId(42L);
         p2.setId(43L);
         doReturn(Optional.of(p1)).when(repository).findById(42L);
