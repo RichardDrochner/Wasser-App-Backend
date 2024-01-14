@@ -43,6 +43,13 @@ public class NutzerService {
                     return wasserRepo.save(wassers);
                 }
             }
+            else if(wassers.getOwner() == null){
+                if (wasser.getDate().equals(date)) {
+                    wassers.setTagesziel(wasser.getTagesziel());
+                    wassers.setGetrunken(wasser.getGetrunken());
+                    return wasserRepo.save(wassers);
+                }
+            }
         }
         return  wasserRepo.save(wasser);
     }
