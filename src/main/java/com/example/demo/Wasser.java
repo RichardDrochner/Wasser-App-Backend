@@ -15,7 +15,8 @@ public class Wasser extends Benutzer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    public Wasser(LocalDate date, double tagesziel, double getrunken) {
+    public Wasser(LocalDate date, String owner, double tagesziel, double getrunken) {
+        this.owner = owner;
         this.tagesziel = tagesziel;
         this.getrunken = getrunken;
         this.date = date;
@@ -59,5 +60,16 @@ public class Wasser extends Benutzer {
 
     public Long getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Wasser{" +
+                "owner='" + owner + '\'' +
+                ", date=" + date +
+                ", tagesziel=" + tagesziel +
+                ", getrunken=" + getrunken +
+                ", id=" + id +
+                '}';
     }
 }

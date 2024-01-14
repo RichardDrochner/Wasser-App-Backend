@@ -51,6 +51,10 @@ public class NutzerService {
         return nutzerRepo.findById(id).orElseThrow(RuntimeException::new);
     }
 
+    public Wasser getWasser(Long id){
+        return wasserRepo.findById(id).orElseThrow(RuntimeException::new);
+    }
+
     public List<Wasser> getAll(String email) {
        Iterable<Wasser> iterator = wasserRepo.findAll();
        List<Wasser> wassers = new ArrayList<>();

@@ -39,7 +39,13 @@ public class NutzerController {
      @GetMapping("/users")
      @CrossOrigin
      public List<Wasser> getAllForUser(@RequestParam("mail") String email) {
-         return email.equals("") ? service.getAllWithoutOwner() : service.getAll(email);
+         return email.isEmpty() ? service.getAllWithoutOwner() : service.getAll(email);
      }
 
+    @GetMapping("/wassers/{id}")
+    public Wasser getWasser(@PathVariable String id) {
+        logger.info("GET request on route Wasser with {}", id);
+        Long wasserId = Long.parseLong(id);
+        return service.getWasser(wasserId);
+    }
 }
