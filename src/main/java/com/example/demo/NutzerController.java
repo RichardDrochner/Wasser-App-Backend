@@ -18,10 +18,8 @@ public class NutzerController {
 
     @PostMapping("/User")
     @CrossOrigin
-    public Long createUser(@RequestBody Benutzer benutzer) {
-        service.save(benutzer);
-        System.out.println(benutzer.getId());
-        return benutzer.getId();
+    public Benutzer createUser(@RequestBody Benutzer benutzer) {
+        return service.save(benutzer);
     }
 
     @GetMapping("/users/{id}")
@@ -37,15 +35,11 @@ public class NutzerController {
         return service.saveWasser(wasser);
     }
 
-    @PostMapping("/update")
-    @CrossOrigin
-    public void updateWasser(@RequestParam("owner") String owner, @RequestParam("tagesziel") double tagesziel,@RequestParam("getrunken") double getrunken){
-        service.updateWasser(owner, tagesziel, getrunken);
-    }
 
-    @GetMapping("/users")
-    @CrossOrigin
-    public List<Wasser> getAllForUser(@RequestParam("mail") String email) {
-        return service.getAll(email);
-    }
+     @GetMapping("/users")
+     @CrossOrigin
+     public List<Wasser> getAllForUser(@RequestParam("mail") String email) {
+         return email.equals("") ? service.getAllWithoutOwner() : service.getAll(email);
+     }
+
 }

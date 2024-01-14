@@ -10,10 +10,10 @@ class NutzerTest {
     void testToString() {
         int amount = 99;
 
-        Benutzer wasser = new Benutzer("Richard", "Drochner", "richard@mail.com");
+        Benutzer wasser = new Benutzer("Richard", "richard@mail.com");
         wasser.setId(42L);
 
-        String expected = "Benutzer{id=42, name=Richard, email=richard@mail.com}";
+        String expected = "Benutzer{id=42, name='Richard', email='richard@mail.com'}";
 
         String actual = wasser.toString();
 
